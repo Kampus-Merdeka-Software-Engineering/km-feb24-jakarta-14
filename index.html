@@ -5,53 +5,182 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Superstore</title>
   <!-- Website -->
-  <link rel="icon" type="image/x-icon" href="superstore.png">
+  <link rel="icon" type="image/x-icon" href="dist/img/superstore.png">
   <!-- CSS -->
   <link rel="stylesheet" href="style.css">
   <!-- Icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Chart -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+  <script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
+
 </head>
 <body>
-    <aside class="sidebar">
-        <div class="logo">
-          <img src="superstore.png" alt="Logo-Superstore">
-          <span>Super Store</span>
+  <div class="container">
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="logo">
+        <img src="dist/img/superstore.png" alt="Logo-Superstore">
+        <span>Super Store</span>
+      </div>
+      <div class="menu">
+          <button>
+            <a href="#">
+              <i class="fas fa-home"></i>
+              <span>Dashboard</span>
+          </button>
+          <button>
+            <a href="#">
+              <i class="fa fa-sitemap"></i>
+              <span>Sales Distribution</span>
+          </button>
+          <button>
+            <a href="#">
+              <i class="fa fa-child"></i>
+              <span>Sales Segmentation</span>
+          </button>
+          <button>
+            <a href="#">
+              <i class="fa fa-line-chart"></i>
+              <span>Repetition Trend</span>
+          </button>
+          <button>
+            <a href="#">
+              <i class="fa fa-shopping-cart"></i>
+              <span>Profitable Product</span>
+          </button>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="main-content">
+      <!-- judul -->
+      <div class="judul">
+        <h3>Super Store optimizing Business <br>
+        Operations with  CRM Data Management</h3>
+      </div>
+      <div class="dashboard">
+        <h3>Dashboard</h3>
+
+        <!-- filter -->
+        <div class="filter-state">
+          <label for="state">Filter by state:</label><br>
+          <select id="state" name="filter-state">
+              <option value="">Choose State...</option>
+              <option value="pilihan2">Pilihan 2</option>
+              <option value="pilihan3">Pilihan 3</option>
+              <option value="pilihan4">Pilihan 4</option>
+          </select>
         </div>
-        <div class="menu">
-            <button>
-              <a href="#">
-                <i class="fas fa-home"></i>
-                <span>Dashboard</span>
-            </button>
-            <button>
-              <a href="#">
-                <i class="fa fa-sitemap"></i>
-                <span>Sales Distribution</span>
-            </button>
-            <button>
-              <a href="#">
-                <i class="fa fa-child"></i>
-                <span>Sales Segmentation</span>
-            </button>
-            <button>
-              <a href="#">
-                <i class="fa fa-line-chart"></i>
-                <span>Repetition Trend</span>
-            </button>
-            <button>
-              <a href="#">
-                <i class="fa fa-shopping-cart"></i>
-                <span>Profitable Product</span>
-            </button>
+
+        <!-- Dashboard -->
+        <div class="dashboard-1">
+          <!-- Statistik -->
+          <div class="stat-1">
+            <!-- Total Populasi -->
+            <div class="stat stat-populasi">
+              <div id="total-population">
+                <p class="body-stat">0</p>
+              </div>
+              <p class="head-stat">Total Population</p>
+            </div>
+            <!-- Total User -->
+            <div class="stat stat-user">
+              <div id="total-user">
+                <p class="body-stat">0</p>
+              </div>
+              <p class="head-stat">Total User</p>
+            </div>
+          </div>
+          <div class="stat-2">
+            <!-- Total Profit -->
+            <div class="stat stat-profit">
+              <div id="total-profit">
+                <p class="body-stat">0</p>
+              </div>
+              <p class="head-stat">Total Profit</p>
+            </div>
+            <!-- Sales Quantity -->
+            <div class="stat stat-quantity">
+              <div id="total-sales">
+                <p class="body-stat">0</p>
+              </div>
+              <p class="head-stat">Sales Quantity</p>
+            </div>
+          </div>
+          <!-- Map Distribution -->
+          <div class="map" id="mapChart"></div>
         </div>
-    </aside>
-    <div class="main-content">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum nesciunt fuga recusandae nostrum repellat. Maiores voluptates ducimus at neque aliquid ut nihil, eos laboriosam laudantium, hic doloremque temporibus saepe recusandae.</p>
-      <span>WKWKWKWK</span>
-    </div>
-  <footer>
-    <strong class="footer">Superstore&nbsp;Copyright &copy; 2024</strong>
-  </footer>
+        <div class="dashboard-2">
+          <!-- Sales Segmentation -->
+          <div class="segment">
+            <canvas id="segment"></canvas>
+          </div>
+          <!-- Profitable Product -->
+          <div class="profit">
+            <table id="productTable">
+              <thead>
+                  <tr>
+                      <th>Product</th>
+                      <th>Profit</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <!-- Data akan dimuat dengan JS -->
+              </tbody>
+          </table>
+          </div>
+        </div>
+        <div class="dashboard-3">
+          <canvas id="lineChart"></canvas>
+        </div>
+      </div>
+      
+      <!-- Sales Distribution -->
+      <h3>Sales Distribution</h3>
+      <div class="sales-distribution">
+        <div class="text">
+          <p>3 things we can highlight:</p>
+          <ul>
+              <li>Florida not in top 5 in sales:
+                  <ul>
+                      <li>Population Composition</li>
+                      <li>Shopping Culture</li>
+                      <li>Industry and Occupation Characteristics</li>
+                  </ul>
+              </li>
+              <li>Washington is in the fifth highest position:
+                  <ul>
+                      <li>Labor Market and Industry</li>
+                      <li>High Purchasing Power</li>
+                      <li>University and Research Influence</li>
+                  </ul>
+              </li>
+              <li>New York up position:
+                  <ul>
+                      <li>Urban Population Concentration</li>
+                      <li>Balance between Income and Cost of Living</li>
+                      <li>Labor Market and Industry</li>
+                      <li>Accessibility and Distribution</li>
+                      <li>Demographic and Consumer Characteristics</li>
+                  </ul>
+              </li>
+          </ul>
+        </div>
+        <!-- Map Distribution -->
+        <div class="map" id="mapChart"></div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+      <strong class="footer">Superstore&nbsp;Copyright &copy; 2024</strong>
+    </footer>
+  </div>
+
+  <!-- Javascript -->
   <script src="script.js"></script>
 </body>
 </html>
