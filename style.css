@@ -1,16 +1,20 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: rgba(240, 215, 203, 0.677);
   font-family: Arial, sans-serif;
+}
+
+.container {
   display: flex;
+  flex-direction: column;
+  background: #F9F6F4;
 }
 
 .sidebar {
   width: 13%;
   float: left;
   height: 100%;
-  background-color: #ffffff;
+  background-color: #332828;
   color: #fff;
   position: fixed;
   top: 0;
@@ -19,6 +23,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   padding: 1%;
+  flex-shrink: 0;
 }
 
 .logo {
@@ -26,7 +31,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff;
+  background-color: #332828;
 }
 
 .logo img {
@@ -35,7 +40,7 @@ body {
 }
 
 .logo span {
-  color: #000000;
+  color: #ffffff;
   font-weight: bold;
   font-family: sans-serif;
 }
@@ -49,20 +54,21 @@ body {
   padding: 5%;
   margin-top: 10px;
   border: none;
-  background-color: #ffffff;
-  color: #0000008e;
+  background-color: #332828;
+  color: #ffffff;
   font-weight: bold;
   font-family: sans-serif;
   text-align: left;
   cursor: pointer;
+  border-radius: 10px;
 }
 
 .menu button:hover {
-  background-color: #777;
+  background-color: #1F0609;
 }
 
 .menu a {
-  color: #0000008e;
+  color: #ffffff;
 }
 
 a {
@@ -73,7 +79,7 @@ a {
   margin-left: 5%;
 }
 
-@media only screen and (max-width: 600px) { 
+@media only screen and (max-width: 1024px) { 
   .logo span {
       display: none;
   }
@@ -86,13 +92,173 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 40px;
+  }
+
+  .sidebar {
+    padding: 0%;
+    position: fixed;
   }
 }
 
 .main-content {
-  width: 85%;
-  float: right;
-  background-color: #dfcece;
+  margin-left: 15%;
+  padding-left: 2%;
+  padding-right: 2%;
+  margin-top: 2%;
+  width: 81%;
+  background: #F9F6F4;
+  display: flex;
+  flex-direction: column;
+  cursor: default;
+}
+
+.main-content h3{
+  margin-top: 4%;
+}
+
+.judul h3 {
+  text-align: center;
+  margin: 0;
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard label {
+  color: #332828;
+}
+
+.dashboard select {
+  width: 150px;
+  height: 30px;
+  border-radius: 10px;
+  border-width: 2px;
+  margin-top: 1%;
+  cursor: pointer;
+}
+
+.dashboard select:hover {
+  background-color: #e5e5e5;
+}
+
+.dashboard-1 {
+  margin-top: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.stat-1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-populasi {
+  margin-bottom: 10%;
+  background: linear-gradient(to bottom, #3af5df85, #f7ff8279);
+}
+
+.stat-profit {
+  margin-bottom: 10%;
+  background: linear-gradient(to bottom, #3af5df85, #FFD3B4);
+} 
+
+.stat-user {
+  background: linear-gradient(to bottom, #f7ff827e, #3af5df7e);
+}
+
+.stat-quantity {
+  background: linear-gradient(to bottom, #FFD3B4, #3af5df85);
+}
+
+.map {
+  height: 250px;
+  background-color: linear-gradient(to bottom, #3af5df85, #FFF1D6);
+}
+
+.stat {
+  border-radius: 5px;
+  flex: 1;
+  width: 230px;
+  padding-left: 3%;
+}
+
+.head-stat {
+  color: #982E00;
+  font-size: 80%;
+  font-weight: bold;
+}
+
+.body-stat {
+  color: #332828;
+  font-weight: lighter;
+  font-family: sans-serif;
+  font-size: 200%;
+  margin-top: 5%;
+  margin-bottom: 0%;
+}
+
+.dashboard-2 {
+  margin-top: 2%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard-3 {
+  margin-top: 2%;
+  display: flex;
+  height: 250px;
+  width: 500px;
+}
+
+.segment {
+  height: 300px;
+  width: 150%;
+  background-color: linear-gradient(to bottom, #3af5df85, #FFF1D6);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.profit {
+  display: flex;
+}
+
+h3 {
+  color: #332828;
+}
+
+.text {
+  color: #332828;
+  font-size: small;
+}
+
+.sales-distribution {
+  display: flex;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+table th {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
 }
 
 footer {
@@ -104,9 +270,5 @@ footer {
   bottom: 0;
   display: flex;
   justify-content: center;
-}
-
-.footer {
-  color: #0000008e;
   font-size: small;
 }
