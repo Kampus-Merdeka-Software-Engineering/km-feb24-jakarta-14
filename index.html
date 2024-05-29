@@ -18,7 +18,7 @@
 
 </head>
 <body>
-  <div class="container">
+  <div class="container" id="dashboard">
     <!-- Sidebar -->
     <nav class="sidebar">
       <div class="logo">
@@ -27,12 +27,12 @@
       </div>
       <div class="menu">
           <button>
-            <a href="#">
+            <a href="#dashboard">
               <i class="fas fa-home"></i>
               <span>Dashboard</span>
           </button>
           <button>
-            <a href="#">
+            <a href="#box-sales-distribution">
               <i class="fa fa-sitemap"></i>
               <span>Sales Distribution</span>
           </button>
@@ -81,75 +81,82 @@
         </div>
 
         <!-- Dashboard -->
-        <div class="dashboard-1">
-          <!-- Statistik -->
-          <div class="stat-1">
-            <!-- Total Populasi -->
-            <div class="stat stat-populasi">
-              <div id="total-population">
-                <p class="body-stat">0</p>
+        <div class="dashboard-1" id="dashboard">
+          <div class="dashboard-1l">
+            <!-- Statistik -->
+            <div class="stat-1">
+              <!-- Total Populasi -->
+              <div class="stat stat-populasi">
+                <div id="total-population">
+                  <p class="body-stat">0</p>
+                </div>
+                <p class="head-stat">Total Population</p>
               </div>
-              <p class="head-stat">Total Population</p>
+              <!-- Total User -->
+              <div class="stat stat-user">
+                <div id="total-user">
+                  <p class="body-stat">0</p>
+                </div>
+                <p class="head-stat">Total User</p>
+              </div>
             </div>
-            <!-- Total User -->
-            <div class="stat stat-user">
-              <div id="total-user">
-                <p class="body-stat">0</p>
+            <div class="stat-2">
+              <!-- Total Profit -->
+              <div class="stat stat-profit">
+                <div id="total-profit">
+                  <p class="body-stat">0</p>
+                </div>
+                <p class="head-stat">Total Profit</p>
               </div>
-              <p class="head-stat">Total User</p>
+              <!-- Sales Quantity -->
+              <div class="stat stat-quantity">
+                <div id="total-sales">
+                  <p class="body-stat">0</p>
+                </div>
+                <p class="head-stat">Sales Quantity</p>
+              </div>
             </div>
           </div>
-          <div class="stat-2">
-            <!-- Total Profit -->
-            <div class="stat stat-profit">
-              <div id="total-profit">
-                <p class="body-stat">0</p>
-              </div>
-              <p class="head-stat">Total Profit</p>
-            </div>
-            <!-- Sales Quantity -->
-            <div class="stat stat-quantity">
-              <div id="total-sales">
-                <p class="body-stat">0</p>
-              </div>
-              <p class="head-stat">Sales Quantity</p>
-            </div>
+          <!-- Sales Distribution -->
+          <div class="dashboard-1r">
+            <canvas id="bar-sales-distribution"></canvas>
           </div>
-          <!-- Map Distribution -->
-          <div class="map" id="mapChart"></div>
         </div>
+
         <div class="dashboard-2">
-          <!-- Sales Segmentation -->
-          <div class="segment">
-            <canvas id="segment"></canvas>
+          <div class="pie-segment">
+            <!-- Sales Segmentation -->
+            <div class="segment">
+              <canvas class="max-height" id="segment"></canvas>
+            </div>
+            <div class="consumer">
+              <canvas class="max-height" id="consumer"></canvas>
+            </div>
           </div>
-          <div class="consumer">
-            <canvas id="consumer"></canvas>
-          </div>
+
           <!-- Profitable Product -->
           <div class="profit">
-            <table id="productTable">
+            <table class="max-height" id="productTable">
               <thead>
-                  <tr>
-                      <th>Product</th>
-                      <th>Profit</th>
-                  </tr>
+                    <th>Product</th>
+                    <th>Profit</th>
               </thead>
               <tbody>
                   <!-- Data akan dimuat dengan JS -->
               </tbody>
-          </table>
+            </table>
           </div>
         </div>
+        
         <div class="dashboard-3">
-          <canvas id="lineChart"></canvas>
+          <canvas class="max-width max-height" id="lineChart"></canvas>
         </div>
       </div>
       
       <!-- Sales Distribution -->
       <h3>Sales Distribution</h3>
-      <div class="sales-distribution">
-        <div class="text">
+      <div class="display-flex max-width" id="box-sales-distribution">
+        <div class="text satupertiga">
           <p>3 things we can highlight:</p>
           <ul>
               <li>Florida not in top 5 in sales:
@@ -177,8 +184,11 @@
               </li>
           </ul>
         </div>
-        <!-- Map Distribution -->
-        <div class="map" id="mapChart"></div>
+
+        <!-- Bar Chart Sales Distribution -->
+        <div class="duapertiga">
+          <canvas class="max-width max-height" id="bar-sales-distribution-2"></canvas>
+        </div>
       </div>
     </main>
 
