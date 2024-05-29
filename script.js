@@ -35,6 +35,52 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('total-user').querySelector('.body-stat').textContent = totalUsers;
             document.getElementById('total-sales').querySelector('.body-stat').textContent = salesQuantity.toFixed(0);
             document.getElementById('total-profit').querySelector('.body-stat').textContent = totalProfit.toFixed(0);
+            
+            // Sales Distribution
+            const xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+            const yValues = [55, 49, 44, 24, 15];
+            const barColors = ["red", "green","blue","orange","brown"];
+
+            new Chart("bar-sales-distribution", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+                }]
+            },
+            options: {
+                legend: {display: false},
+                title: {
+                display: true,
+                text: "World Wine Production 2018"
+                }
+            }
+            });
+
+            // Sales Distribution-2
+            const xValues2 = ["Italy", "France", "Spain", "USA", "Argentina"];
+            const yValues2 = [55, 49, 44, 24, 15];
+            const barColors2 = ["red", "green","blue","orange","brown"];
+
+            new Chart("bar-sales-distribution-2", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+                }]
+            },
+            options: {
+                legend: {display: false},
+                title: {
+                display: true,
+                text: "World Wine Production 2018"
+                }
+            }
+            });
 
             // Process data for Pie Chart - Segment by Quantity
             const segmentQuantities = data.reduce((acc, item) => {
@@ -47,14 +93,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const segment = Object.keys(segmentQuantities);
             const quantity = Object.values(segmentQuantities);
-            const barColors = ["#7C6230", "#B69352", "#D6C096"];
+            const pieColors = ["#7C6230", "#B69352", "#D6C096"];
 
             new Chart("segment", {
                 type: "pie",
                 data: {
                     labels: segment,
                     datasets: [{
-                        backgroundColor: barColors,
+                        backgroundColor: pieColors,
                         data: quantity
                     }]
                 },
@@ -82,14 +128,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
             const segment2 = Object.keys(segmentCustomerUniqueFinal);
             const customerId = Object.values(segmentCustomerUniqueFinal);
-            const barColors2 = ["#7C6230", "#B69352", "#D6C096"];
+            const pieColors2 = ["#7C6230", "#B69352", "#D6C096"];
 
             new Chart("consumer", {
                 type: "pie",
                 data: {
                     labels: segment2,
                     datasets: [{
-                        backgroundColor: barColors2,
+                        backgroundColor: pieColors2,
                         data: customerId
                     }]
                 },
