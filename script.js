@@ -34,56 +34,87 @@ document.addEventListener('DOMContentLoaded', function() {
             // Update in the HTML
             document.getElementById('total-user').querySelector('.body-stat').textContent = totalUsers;
             document.getElementById('total-sales').querySelector('.body-stat').textContent = salesQuantity.toFixed(0);
-            document.getElementById('total-profit').querySelector('.body-stat').textContent = totalProfit.toFixed(0);
+            document.getElementById('total-profit').querySelector('.body-stat').textContent = `$${totalProfit.toFixed(0)}`;
             
             // Sales Distribution
-            const xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
-            const yValues = [55, 49, 44, 24, 15];
-            const barColors = ["red", "green","blue","orange","brown"];
-
-            new Chart("bar-sales-distribution", {
-            type: "bar",
-            data: {
-                labels: xValues,
-                datasets: [{
-                backgroundColor: barColors,
-                data: yValues
-                }]
-            },
-            options: {
-                legend: {display: false},
-                title: {
-                display: true,
-                text: "World Wine Production 2018"
+            const stateQuantity = data.reduce((acc, item) => {
+                if (!acc[item.State]) {
+                    acc[item.State] = 0;
                 }
-            }
-            });
+                acc[item.State] += parseFloat(item.Quantity);
+                return acc;
+            }, {});
+            const sortedState = Object.entries(stateQuantity)
+                .sort(([, a], [, b]) => b - a)
+                .slice(0, 5);
 
+            const topState = sortedState.map(([state]) => state);
+            const topQuantity = sortedState.map(([, quantity]) => quantity);
+
+            const barSalesDistributionCtx = document.getElementById("bar-sales-distribution").getContext("2d");
+
+            new Chart(barSalesDistributionCtx, {
+                type: "bar",
+                data: {
+                    labels: topState,
+                    datasets: [{
+                        label: "Quantity",
+                        data: topQuantity,
+                        backgroundColor:  ["blue"],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
             // Sales Distribution-2
-            const xValues2 = ["Italy", "France", "Spain", "USA", "Argentina"];
-            const yValues2 = [55, 49, 44, 24, 15];
-            const barColors2 = ["red", "green","blue","orange","brown"];
-
-            new Chart("bar-sales-distribution-2", {
-            type: "bar",
-            data: {
-                labels: xValues,
-                datasets: [{
-                backgroundColor: barColors,
-                data: yValues
-                }]
-            },
-            options: {
-                legend: {display: false},
-                title: {
-                display: true,
-                text: "World Wine Production 2018"
+            const stateQuantity2 = data.reduce((acc, item) => {
+                if (!acc[item.State]) {
+                    acc[item.State] = 0;
                 }
-            }
+                acc[item.State] += parseFloat(item.Quantity);
+                return acc;
+            }, {});
+            const sortedState2 = Object.entries(stateQuantity2)
+                .sort(([, a], [, b]) => b - a)
+                .slice(0, 5);
+
+            const topState2 = sortedState2.map(([state]) => state);
+            const topQuantity2 = sortedState2.map(([, quantity]) => quantity);
+
+            const barSalesDistribution2Ctx = document.getElementById("bar-sales-distribution-2").getContext("2d");
+
+            new Chart(barSalesDistribution2Ctx, {
+                type: "bar",
+                data: {
+                    labels: topState2,
+                    datasets: [{
+                        label: "Quantity",
+                        data: topQuantity2,
+                        backgroundColor:  ["blue"],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
             });
 
-            // Process data for Pie Chart - Segment by Quantity
-            const segmentQuantities = data.reduce((acc, item) => {
+            // Segment by Quantity
+            const segmentQuantity = data.reduce((acc, item) => {
                 if (!acc[item.Segment]) {
                     acc[item.Segment] = 0;
                 }
@@ -91,11 +122,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 return acc;
             }, {});
 
-            const segment = Object.keys(segmentQuantities);
-            const quantity = Object.values(segmentQuantities);
+            const segment = Object.keys(segmentQuantity);
+            const quantity = Object.values(segmentQuantity);
             const pieColors = ["#7C6230", "#B69352", "#D6C096"];
-
-            new Chart("segment", {
+            const segmentctx = document.getElementById("segment").getContext("2d");
+            
+            new Chart(segmentctx, {
                 type: "pie",
                 data: {
                     labels: segment,
@@ -112,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
-            // Process data for Pie Chart - Unique Customers by Segment
+            // Segment by Unique Customer_ID
             const segmentCustomerUnique = data.reduce((acc, item) => {
                 if (!acc[item.Segment]) {
                     acc[item.Segment] = new Set();
@@ -129,8 +161,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const segment2 = Object.keys(segmentCustomerUniqueFinal);
             const customerId = Object.values(segmentCustomerUniqueFinal);
             const pieColors2 = ["#7C6230", "#B69352", "#D6C096"];
-
-            new Chart("consumer", {
+            const segment2ctx = document.getElementById("consumer").getContext("2d");
+            
+            new Chart(segment2ctx, {
                 type: "pie",
                 data: {
                     labels: segment2,
@@ -147,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
 
-            // Calculate Total Profits for each product
+            // Product profit
             function calculateTotalProfits(data) {
                 const productProfits = {};
 
@@ -174,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 nameCell.textContent = productName;
 
                 const profitCell = document.createElement('td');
-                profitCell.textContent = profit.toFixed(2);
+                profitCell.textContent = `$${profit.toFixed(2)}`;
 
                 row.appendChild(nameCell);
                 row.appendChild(profitCell);
@@ -229,4 +262,30 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 });
 
-
+// data tables 
+$(document).ready(() => {
+    $("#tableHead").hide();
+    $.ajax({
+        url: "./superstore.json",
+        dataType: "json",
+        success: function (data) {
+            $("#tableHead").show();
+            // console.log(data);
+            // masukin data ke dalam table
+            $("#example").DataTable({
+                data: data,
+                columns: [
+                    { data: "Order_ID" },
+                    { data: "Order_Date" },
+                    { data: "Customer_ID" },
+                    { data: "Segment" },
+                    { data: "State" },
+                    { data: "Sub_Category" },
+                    { data: "Sales" },
+                    { data: "Quantity" },
+                    { data: "Profit" }
+                ]
+            });
+        },
+    });
+});
