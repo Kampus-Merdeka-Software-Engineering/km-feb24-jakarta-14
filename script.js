@@ -270,8 +270,6 @@ $(document).ready(() => {
         dataType: "json",
         success: function (data) {
             $("#tableHead").show();
-            // console.log(data);
-            // masukin data ke dalam table
             $("#example").DataTable({
                 data: data,
                 columns: [
