@@ -10,12 +10,21 @@
   <link rel="stylesheet" href="style.css">
   <!-- Icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- CSS DataTables -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" >
+  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
   <!-- Chart -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://code.highcharts.com/maps/highmaps.js"></script>
-  <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
-
+  <!-- jQuery Pastikan jQuery berada pada paling atas saat pakai datatables -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- DataTables JS -->
+  <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+  <!-- DataTables Search Highlight -->
+  <script src="https://cdn.datatables.net/plug-ins/1.11.5/features/searchHighlight/dataTables.searchHighlight.min.js"></script>
+  <!-- jQuery Highlight -->
+  <script src="https://bartaz.github.io/sandbox.js/jquery.highlight.js"></script>
 </head>
 <body>
   <div class="container" id="dashboard">
@@ -54,7 +63,7 @@
           <button>
             <a href="#">
               <i class="fa-solid fa-table"></i>
-              <span>DataTables</span>
+              <span>Data Tables</span>
           </button>
       </div>
     </nav>
@@ -189,6 +198,25 @@
         <div class="duapertiga">
           <canvas class="max-width max-height" id="bar-sales-distribution-2"></canvas>
         </div>
+      </div>
+
+      <!-- Data Tables -->
+      <div class="datatables">
+        <table id="example" class="display" style="width: 100%">
+          <thead id="tableHead">
+            <tr>
+              <th>Order_ID</th>
+              <th>Order_Date</th>
+              <th>Customer_ID</th>
+              <th>Segment</th>
+              <th>State</th>
+              <th>Sub_Category</th>
+              <th>Sales</th>
+              <th>Quantity</th>
+              <th>Profit</th>
+            </tr>
+          </thead>
+        </table>  
       </div>
     </main>
 
