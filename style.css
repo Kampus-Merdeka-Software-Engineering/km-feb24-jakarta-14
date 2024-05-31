@@ -110,6 +110,8 @@ body {
     background: #F9F6F4;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
+    overflow-x: auto;
     cursor: default;
   }
   
@@ -253,8 +255,6 @@ body {
   }
 
   .profit {
-    margin-left: 2%;
-    width: 48%;
     box-sizing: border-box;
     justify-content: center;
   }
@@ -266,12 +266,14 @@ body {
 
   .profit td {
     color: #1F0609;
+    background-color: white;
   }
 
-  .dashboard-3 {
-    margin-top: 2%;
-    display: flex;
+  .dashboard {
+    margin-top: 4%;
     width: 100%;
+    justify-content: space-between;
+    display: flex;
   }
 
   h3 {
@@ -311,6 +313,59 @@ body {
   .satupertiga {
     width: 40%;
   }
+
+  .satuperempat {
+    width: 30%;
+  }
+
+  .text {
+    color: black;
+  }
+
+  .display-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .display-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .br {
+    border-radius: 10px;
+  }
+
+  .m-1 {
+    margin: 3%;
+  }
+
+  .mt-0 {
+    margin-top: 0%;
+  }
+
+  .p-1 {
+    padding: 3%;
+  }
+
+  .text-light {
+    color: #fff;
+    font-size: small;
+  }
+
+  .ta-center {
+    text-align: center;
+  }
+
+  .ta-justify {
+    text-align: justify ;
+  }
+
+  .content-space {
+    justify-content: space-between;
+  }
+  
   table.dataTable {
     width: 100%;
     margin: 0 auto;
@@ -347,5 +402,4 @@ body {
     color: #0000008e;
     text-align: center;
     font-size: small;
-    cursor: default;
   }

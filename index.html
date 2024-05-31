@@ -46,22 +46,22 @@
               <span>Sales Distribution</span>
           </button>
           <button>
-            <a href="#">
+            <a href="#box-sales-segmentation">
               <i class="fa fa-child"></i>
               <span>Sales Segmentation</span>
           </button>
           <button>
-            <a href="#">
+            <a href="#box-repetition-trend">
               <i class="fa fa-line-chart"></i>
               <span>Repetition Trend</span>
           </button>
           <button>
-            <a href="#">
+            <a href="#box-profitable-product">
               <i class="fa fa-shopping-cart"></i>
               <span>Profitable Product</span>
           </button>
           <button>
-            <a href="#">
+            <a href="#box-data-tables">
               <i class="fa-solid fa-table"></i>
               <span>Data Tables</span>
           </button>
@@ -83,9 +83,6 @@
           <label for="state">Filter by state:</label><br>
           <select id="state" name="filter-state">
               <option value="">Choose State...</option>
-              <option value="pilihan2">Pilihan 2</option>
-              <option value="pilihan3">Pilihan 3</option>
-              <option value="pilihan4">Pilihan 4</option>
           </select>
         </div>
 
@@ -144,27 +141,32 @@
           </div>
 
           <!-- Profitable Product -->
-          <div class="profit">
-            <table class="max-height" id="productTable">
-              <thead>
-                    <th>Product</th>
-                    <th>Profit</th>
-              </thead>
-              <tbody>
-                  <!-- Data akan dimuat dengan JS -->
-              </tbody>
+          <div class="profit dashboard-right">
+            <table class="max-height text" id="productTable">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Profitable</th>
+                        <th>Profit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Data akan dimuat dengan JS -->
+                </tbody>
             </table>
           </div>
         </div>
         
-        <div class="dashboard-3">
+        <div class="dashboard">
           <canvas class="max-width max-height" id="lineChart"></canvas>
         </div>
       </div>
       
       <!-- Sales Distribution -->
-      <h3>Sales Distribution</h3>
-      <div class="display-flex max-width" id="box-sales-distribution">
+      <div class="dashboard" id="box-sales-distribution">
+        <h3>Sales Distribution</h3>
+      </div>
+      <div class="display-flex max-width">
         <div class="text satupertiga">
           <p>3 things we can highlight:</p>
           <ul>
@@ -196,13 +198,125 @@
 
         <!-- Bar Chart Sales Distribution -->
         <div class="duapertiga">
-          <canvas class="max-width max-height" id="bar-sales-distribution-2"></canvas>
+          <canvas class="max-width max-height" id="bar-population-distribution"></canvas>
+        </div>
+      </div>
+
+      <!-- Sales Segmentation -->
+      <div class="dashboard" id="box-sales-segmentation">
+        <h3>Sales Segmentation</h3>
+      </div>
+      <div class="dashboard display-row mt-0" >
+        <div class="max-height duapertiga display-row">
+          <!-- Tempat kedua untuk grafik 1 -->
+          <div class="segment">
+              <canvas class="max-height" id="segment2"></canvas>
+          </div>
+          <!-- Tempat kedua untuk grafik 2 -->
+          <div class="consumer">
+              <canvas class="max-height" id="consumer2"></canvas>
+          </div>
+        </div>
+        <div class="max-height satupertiga text">
+          <tr>
+            <td>
+              <ul>
+                  <li>Consumer dominance on user and sales quntity:
+                      <ul>
+                          <li>Ease of access</li>
+                          <li>More choices</li>
+                          <li>Save time and effort</li>
+                          <li>Discount and Special offers</li>
+                          <li>Easy delivery</li>
+                          <li>Reviews and recommendations</li>
+                          <li>Ease of payment</li>
+                      </ul>
+                  </li>
+                  <li>Corporate is lower than consumer:
+                      <ul>
+                          <li>Special needs and testing</li>
+                          <li>Shipping and handling</li>
+                          <li>Instant availability</li>
+                          <li>Price negotiation</li>
+                          <li>Busininess relationship</li>
+                          <li>Operational efficiency</li>
+                          <li>Mutual Benefits</li>
+                      </ul>
+                  </li>
+                  <li>Home office is lower than others
+                      <ul>
+                          <li>Size and scale</li>
+                          <li>Flexibelity of tools</li>
+                          <li>Space usage</li>
+                          <li>Existing equipment</li>
+                          <li>Cost and spending awareness</li>
+                      </ul>
+                  </li>
+              </ul>
+            </td>
+          </tr>
+        </div>
+      </div>
+
+      <!-- Repetition Trend -->
+      <div class="dashboard" id="box-repetition-trend">
+        <h3>Repetition Trend</h3>
+      </div>
+      <div class="dashboard mt-0">
+        <canvas class="max-width max-height" id="lineChart2"></canvas>
+      </div>
+      <div class="dashboard display-row mt-0">
+        <div class="satuperempat text br m-1 text-light p-1" style="background-color: #333333;">
+          <h4 class="ta-center mt-0">New School Year</h4>
+          <p class="ta-justify">The school year start in September, Stephanie Spencer, from the History of Education Society, said the school year started in September to increase the likelihood of children attending. (BBC)</p>
+        </div>
+        <div class="satuperempat text br m-1 text-light p-1" style="background-color: #333333;">
+          <h4 class="ta-center mt-0">Fall Intake</h4>
+          <p class="ta-justify">The  fall intake offers more opportunities for students in terms of scholarships and financial aid in September. (Yocket)</p>
+        </div>
+        <div class="satuperempat text br m-1 text-light p-1" style="background-color: #333333;">
+          <h4 class="ta-center mt-0">Black Friday</h4>
+          <p class="ta-justify">The date for Black Friday varies between November 23 and 29. (Wikipedia)</p>
+        </div>
+      </div>
+
+      <!-- Profitable Product -->
+      <div class="dashboard" id="box-profitable-product">
+        <h3>Profitable Product</h3>
+      </div>
+      <div class="dashboard display-row mt-0">
+        <div class="dashboard-left text display-column content-space">
+          <div class="dashboard" >
+            <h3 class="ta-center">Highest Profit Products Based on Total Profit</h3>
+            <p>Helps in determining effective sales strategies, such as highlighting these products more or increasing promotions related to them. Helps in planning better stock and sales strategies.</p>
+          </div>
+          <div class="dashboard">
+            <h3 class="ta-center">Products with Highest Profit Potential by Unit Profit</h3>
+            <p>Paying attention to the products with the highest profit potential based on unit sales helps in finding opportunities to improve profit margins, such as reconsidering prices or finding more efficient resources to produce or acquire these products.</p>
+          </div>
+        </div>
+        <div class="profit dashboard-right">
+          <table class="max-height text" id="productTable2">
+              <thead>
+                  <tr>
+                      <th>Product</th>
+                      <th>Profitable</th>
+                      <th>Profit</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <!-- Data akan dimuat dengan JS -->
+              </tbody>
+          </table>
         </div>
       </div>
 
       <!-- Data Tables -->
-      <div class="datatables">
-        <table id="example" class="display" style="width: 100%">
+      <div class="dashboard"  id="box-data-tables">
+        <h3>Data Tables</h3>
+      </div>
+      <div class="dashboard text">
+        <table id="data-tables" class="max-width">
           <thead id="tableHead">
             <tr>
               <th>Order_ID</th>
