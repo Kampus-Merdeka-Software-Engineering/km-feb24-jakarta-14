@@ -206,8 +206,8 @@
       <div class="dashboard" id="box-sales-segmentation">
         <h3>Sales Segmentation</h3>
       </div>
-      <div class="dashboard display-row mt-0" >
-        <div class="max-height duapertiga display-row">
+      <div class="dashboard display-row mt-0" id="area-sales-segmentation" >
+        <div class="duapertiga display-row ">
           <!-- Tempat kedua untuk grafik 1 -->
           <div class="segment">
               <canvas class="max-height" id="segment2"></canvas>
@@ -217,7 +217,7 @@
               <canvas class="max-height" id="consumer2"></canvas>
           </div>
         </div>
-        <div class="max-height satupertiga text">
+        <div class="satupertiga text">
           <tr>
             <td>
               <ul>
@@ -259,6 +259,7 @@
       </div>
 
       <!-- Repetition Trend -->
+      
       <div class="dashboard" id="box-repetition-trend">
         <h3>Repetition Trend</h3>
       </div>
@@ -285,7 +286,7 @@
         <h3>Profitable Product</h3>
       </div>
       <div class="dashboard display-row mt-0">
-        <div class="dashboard-left text display-column content-space">
+        <div class="dashboard-left text display-column space-between">
           <div class="dashboard" >
             <h3 class="ta-center">Highest Profit Products Based on Total Profit</h3>
             <p>Helps in determining effective sales strategies, such as highlighting these products more or increasing promotions related to them. Helps in planning better stock and sales strategies.</p>
@@ -312,26 +313,29 @@
       </div>
 
       <!-- Data Tables -->
-      <div class="dashboard"  id="box-data-tables">
+      <div class="dashboard" id="box-data-tables">
         <h3>Data Tables</h3>
       </div>
       <div class="dashboard text">
-        <table id="data-tables" class="max-width">
-          <thead id="tableHead">
-            <tr>
-              <th>Order_ID</th>
-              <th>Order_Date</th>
-              <th>Customer_ID</th>
-              <th>Segment</th>
-              <th>State</th>
-              <th>Sub_Category</th>
-              <th>Sales</th>
-              <th>Quantity</th>
-              <th>Profit</th>
-            </tr>
-          </thead>
-        </table>  
+        <div class="table-container">
+          <table id="data-tables" class="max-width">
+            <thead id="tableHead">
+              <tr>
+                <th>Order_ID</th>
+                <th>Order_Date</th>
+                <th>Customer_ID</th>
+                <th>Segment</th>
+                <th>State</th>
+                <th>Sub_Category</th>
+                <th>Sales</th>
+                <th>Quantity</th>
+                <th>Profit</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
       </div>
+
     </main>
 
     <!-- Footer -->

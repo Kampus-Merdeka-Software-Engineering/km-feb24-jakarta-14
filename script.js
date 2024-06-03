@@ -445,8 +445,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 });
 
-$('a').on('click', function(event) {
-    event.preventDefault();
-});
 
 
