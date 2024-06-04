@@ -435,7 +435,23 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                     }
                 });
+
+            // Update Total Population based on filtered data
+            if (filteredData.length === superstore.length) {
+                document.getElementById('total-population').querySelector('.body-stat').textContent = usa.reduce((total, item) => {
+                    return total + parseInt(item.Population.replace(/,/g, ''), 10);
+                }, 0).toLocaleString();
+            } else {
+                const uniqueFilteredStates = [...new Set(filteredData.map(item => item.State))];
+                const totalPopulation = uniqueFilteredStates.reduce((total, state) => {
+                    const population = usa.find(pop => pop.State === state).Population;
+                    const populationNumber = parseInt(population.replace(/,/g, ''), 10);
+                    return total + populationNumber;
+                }, 0);
+
+                document.getElementById('total-population').querySelector('.body-stat').textContent = totalPopulation.toLocaleString();
             }
+        }
 
             updateDashboard(superstore);
 
@@ -481,10 +497,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                     }
                 ]
-            });
         })
+    })
         .catch(error => {
             console.error('Error fetching superstore data:', error);
         });
-});
-
+    });
