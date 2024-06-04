@@ -374,7 +374,9 @@ table.dataTable thead th {
   }
 }
 
-  
+canvas {
+  height: 300px;
+}  
 
 footer {
   margin-left: 15%;
@@ -491,6 +493,10 @@ footer {
   .dashboard-left {
     width: 98%;
   }
+
+  canvas {
+    height: 300px;
+  }
 }
 
 @media only screen and (max-width: 440px) {
@@ -544,5 +550,9 @@ footer {
 
   .max-height {
     height: 600px;
+  }
+
+  canvas {
+    height: 300px;
   }
 }
