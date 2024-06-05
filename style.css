@@ -7,14 +7,13 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  background: #F9F6F4;
 }
   
 .sidebar {
   width: 13%;
   float: left;
   height: 100%;
-  background-color: #332828;
+  background-color: #293241;
   color: #fff;
   position: fixed;
   top: 0;
@@ -31,7 +30,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #332828;
 }
   
 .logo img {
@@ -54,7 +52,7 @@ body {
   padding: 5%;
   margin-top: 10px;
   border: none;
-  background-color: #332828;
+  background-color: #293241;
   color: #ffffff;
   font-weight: bold;
   font-family: sans-serif;
@@ -64,7 +62,7 @@ body {
 }
   
 .menu button:hover {
-  background-color: #1F0609;
+  background-color: #1e242f;
 }
   
 .menu a {
@@ -83,9 +81,9 @@ a {
   margin-left: 15%;
   padding-left: 2%;
   padding-right: 2%;
-  margin-top: 2%;
+  padding-top: 2%;
   width: 81%;
-  background: #F9F6F4;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -108,7 +106,7 @@ a {
 }
   
 .dashboard label {
-  color: #332828;
+  color: #000000;
 }
   
 .dashboard select {
@@ -155,20 +153,20 @@ a {
   
 .stat-populasi {
   margin-bottom: 10%;
-  background: linear-gradient(to bottom, #b9947098, #F8F4E1);
+  background: linear-gradient(to bottom, #ffffff, #3d5a80);
 }
   
 .stat-profit {
   margin-bottom: 10%;
-  background: linear-gradient(to bottom, #b9947098, #F8F4E1);
+  background: linear-gradient(to bottom, #ffffff, #3d5a80);
 } 
   
 .stat-user {
-  background: linear-gradient(to bottom, #F8F4E1, #b9947098);
+  background: linear-gradient(to bottom, #ffffff, #3d5a80);
 }
   
 .stat-quantity {
-  background: linear-gradient(to bottom, #F8F4E1, #b9947098);
+  background: linear-gradient(to bottom, #ffffff, #3d5a80);
 }
   
 #bar-sales-distribution {
@@ -176,20 +174,20 @@ a {
 }
   
 .stat {
-  border-radius: 5px;
+  border-radius: 10px;
   flex: 1;
   width: 230px;
   padding-left: 3%;
 }
   
 .head-stat {
-  color: #982E00;
+  color: #ffffff;
   font-size: 80%;
   font-weight: bold;
 }
   
 .body-stat {
-  color: #332828;
+  color: #000000;
   font-weight: lighter;
   font-family: sans-serif;
   font-size: 200%;
@@ -238,12 +236,13 @@ a {
 }
 
 .profit th {
-  background-color: #d8d8d8;
+  background-color: #293241;
+  color: white;
   text-align: center;
 }
 
 .profit td {
-  color: #1F0609;
+  color: #293241;
   background-color: white;
 }
 
@@ -255,11 +254,11 @@ a {
 }
 
 h3 {
-  color: #332828;
+  color: #293241;
 }
   
 .text {
-  color: #332828;
+  color: #293241;
   font-size: small;
 }
 
@@ -294,6 +293,7 @@ table th {
 
 .satuperempat {
   width: 30%;
+  background-color: #293241;
 }
 
 .text {
@@ -356,7 +356,8 @@ table.dataTable {
 }
   
 table.dataTable thead th {
-  background-color: #d8d8d8;
+  background-color: #293241;
+  color: white;
 }
   
 .spinner {

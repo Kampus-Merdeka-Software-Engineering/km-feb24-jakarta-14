@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     datasets: [{
                         label: "Population",
                         data: topPopulations,
-                        backgroundColor: ["#D6C096"],
+                        backgroundColor: ["#3d5a80"],
                         borderWidth: 1
                     }]
                 },
@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         datasets: [{
                             label: "Quantity",
                             data: topQuantity,
-                            backgroundColor: ["#D6C096"],
+                            backgroundColor: ["#3d5a80"],
                             borderWidth: 1
                         }]
                     },
@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 const segment = Object.keys(segmentQuantity);
                 const quantity = Object.values(segmentQuantity);
-                const pieColors = ["#7C6230", "#B69352", "#D6C096"];
+                const pieColors = ["#293241", "#3d5a80", "#6695d2"];
 
                 if (segmentChart) {
                     segmentChart.destroy();
@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 const segment2 = Object.keys(segmentCustomerUniqueFinal);
                 const customerId = Object.values(segmentCustomerUniqueFinal);
-                const pieColors2 = ["#7C6230", "#B69352", "#D6C096"];
+                const pieColors2 = ["#293241", "#3d5a80", "#6695d2"];
 
                 if (segmentCustomerChart) {
                     segmentCustomerChart.destroy();
@@ -351,7 +351,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             label: "Quantity",
                             data: quantity2,
                             fill: false,
-                            borderColor: "#7C6230",
+                            borderColor: "#3d5a80",
                             lineTension: 0,
                         }]
                     },
@@ -424,7 +424,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             label: "Quantity",
                             data: quantity2,
                             fill: false,
-                            borderColor: "#7C6230",
+                            borderColor: "#3d5a80",
                             lineTension: 0,
                         }]
                     },
