@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Superstore</title>
   <!-- Website -->
-  <link rel="icon" type="image/x-icon" href="superstore-1.png">
+  <link rel="icon" type="image/x-icon" href="/dist/img/superstore-1.png">
   <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dist/css/style.css">
   <!-- Icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <!-- CSS DataTables -->
@@ -31,7 +31,7 @@
     <!-- Sidebar -->
     <nav class="sidebar">
       <div class="logo" >
-        <img src="superstore-1.png" alt="Logo-Superstore">
+        <img src="dist/img/superstore-1.png" alt="Logo-Superstore">
         <span>Super Store</span>
       </div>
       <div class="menu">
@@ -71,6 +71,12 @@
               <span>Data Tables</span>
             </a>
           </button>
+          <button>
+            <a href="#box-profile-team">
+              <i class="fas fa-users"></i>
+              <span>Profile Team</span>
+            </a>
+          </button>
       </div>
     </nav>
 
@@ -79,7 +85,7 @@
       <!-- judul -->
       <div class="judul">
         <h3>Super Store optimizing Business <br>
-        Operations with  CRM Data Management</h3>
+        Operations with CRM Data Management</h3>
       </div>
       <div class="dashboard">
         <h3>Dashboard</h3>
@@ -131,6 +137,7 @@
           </div>
           <!-- Sales Distribution -->
           <div class="dashboard-1r">
+            <p class="ta-center max-width m-0 text-bold">Sales Quantity by State</p>
             <canvas id="bar-sales-distribution"></canvas>
           </div>
         </div>
@@ -139,9 +146,11 @@
           <div class="pie-segment">
             <!-- Sales Segmentation -->
             <div class="segment">
+              <p class="ta-center max-width m-0 text-bold">Sales Quantity by Segment</p>
               <canvas class="max-height" id="segment"></canvas>
             </div>
             <div class="consumer">
+              <p class="ta-center max-width m-0 text-bold">User by Segment</p>
               <canvas class="max-height" id="consumer"></canvas>
             </div>
           </div>
@@ -164,13 +173,14 @@
         </div>
         
         <div class="dashboard">
+          <p class="ta-center max-width m-0 text-bold">Sales Quantity by Time</p>
           <canvas class="max-width max-height" id="lineChart"></canvas>
         </div>
       </div>
       
       <!-- Sales Distribution -->
       <div class="dashboard" id="box-sales-distribution">
-        <h3>Sales Distribution</h3>
+        <h3>SALES DISTRIBUTION</h3>
       </div>
       <div class="display-flex max-width">
         <div class="text satupertiga">
@@ -204,22 +214,25 @@
 
         <!-- Bar Chart Sales Distribution -->
         <div class="duapertiga">
+          <p class="ta-center max-width m-0  text-bold">Top 5 Population by State</p>
           <canvas class="max-width max-height" id="bar-population-distribution"></canvas>
         </div>
       </div>
 
       <!-- Sales Segmentation -->
       <div class="dashboard" id="box-sales-segmentation">
-        <h3>Sales Segmentation</h3>
+        <h3>SALES SEGMENTATION</h3>
       </div>
       <div class="dashboard display-row mt-0" id="area-sales-segmentation" >
         <div class="duapertiga display-row ">
           <!-- Tempat kedua untuk grafik 1 -->
           <div class="segment">
+              <p class="ta-center max-width m-0 text-bold">Sales Quantity by Segment</p>
               <canvas class="max-height" id="segment2"></canvas>
           </div>
           <!-- Tempat kedua untuk grafik 2 -->
           <div class="consumer">
+              <p class="ta-center max-width m-0 text-bold">User by Segment</p>
               <canvas class="max-height" id="consumer2"></canvas>
           </div>
         </div>
@@ -267,9 +280,10 @@
       <!-- Repetition Trend -->
       
       <div class="dashboard" id="box-repetition-trend">
-        <h3>Repetition Trend</h3>
+        <h3>REPETITION TREND</h3>
       </div>
       <div class="dashboard mt-0">
+        <p class="ta-center max-width m-0 text-bold">Sales Quantity by Time</p>
         <canvas class="max-width max-height" id="lineChart2"></canvas>
       </div>
       <div class="dashboard display-row mt-0">
@@ -289,7 +303,7 @@
 
       <!-- Profitable Product -->
       <div class="dashboard" id="box-profitable-product">
-        <h3>Profitable Product</h3>
+        <h3>PROFITABLE PRODUCT</h3>
       </div>
       <div class="dashboard display-row mt-0">
         <div class="dashboard-left text display-column space-between">
@@ -320,7 +334,7 @@
 
       <!-- Data Tables -->
       <div class="dashboard" id="box-data-tables">
-        <h3>Data Tables</h3>
+        <h3>DATA TABLES</h3>
       </div>
       <div class="dashboard text">
         <div class="table-container">
@@ -341,6 +355,81 @@
           </table>
         </div>
       </div>
+      
+      <!-- Profile Team -->
+      <div class="dashboard" id="box-profile-team">
+        <h3>PROFILE TEAM</h3>
+      </div>
+      <div class="slider">
+        <input type="radio" name="slider" title="slide1" checked="checked" class="slider__nav"/>
+        <input type="radio" name="slider" title="slide2" class="slider__nav"/>
+        <input type="radio" name="slider" title="slide3" class="slider__nav"/>
+        <input type="radio" name="slider" title="slide4" class="slider__nav"/>
+        <input type="radio" name="slider" title="slide5" class="slider__nav"/>
+        <input type="radio" name="slider" title="slide6" class="slider__nav"/>
+        <input type="radio" name="slider" title="slide7" class="slider__nav"/>
+        <input type="radio" name="slider" title="slide8" class="slider__nav"/>
+        <input type="radio" name="slider" title="slide9" class="slider__nav"/>
+        <input type="radio" name="slider" title="slide10" class="slider__nav"/>
+        <input type="radio" name="slider" title="slide11" class="slider__nav"/>
+        <div class="slider__inner">
+          <div class="slider__contents">
+            <img class="slider__image" src="/dist/img/ujay.png" alt="">
+            <h2 class="slider__caption">Huzaifah Alim</h2>
+            <p class="slider__txt">Sekolah Tinggi Teknologi Terpadu Nurul Fikri</p>
+          </div>
+          <div class="slider__contents">
+            <img class="slider__image" src="/dist/img/riska.png" alt="">
+            <h2 class="slider__caption">RISKA FAUZIAH</h2>
+            <p class="slider__txt">Universitas ____________</p>
+          </div>
+          <div class="slider__contents">
+            <img class="slider__image" src="/dist/img/nafiah.png" alt="">
+            <h2 class="slider__caption">television</h2>
+            <p class="slider__txt">Universitas ____________</p>
+          </div>
+          <div class="slider__contents">
+            <img class="slider__image" src="/dist/img/fajar.png" alt="">
+            <h2 class="slider__caption">diamond</h2>
+            <p class="slider__txt">Universitas ____________</p>
+          </div>
+          <div class="slider__contents">
+            <img class="slider__image" src="/dist/img/himmati.png" alt="">
+            <h2 class="slider__caption">diamond</h2>
+            <p class="slider__txt">Universitas ____________</p>
+          </div>
+          <div class="slider__contents">
+            <img class="slider__image" src="/dist/img/ujay.png" alt="">
+            <h2 class="slider__caption">codepen</h2>
+            <p class="slider__txt">Universitas ____________</p>
+          </div>
+          <div class="slider__contents">
+            <img class="slider__image" src="/dist/img/ujay.png" alt="">
+            <h2 class="slider__caption">newspaper-o</h2>
+            <p class="slider__txt">Universitas ____________</p>
+          </div>
+          <div class="slider__contents">
+            <img class="slider__image" src="/dist/img/ujay.png" alt="">
+            <h2 class="slider__caption">television</h2>
+            <p class="slider__txt">Universitas ____________</p>
+          </div>
+          <div class="slider__contents">
+            <img class="slider__image" src="/dist/img/ujay.png" alt="">
+            <h2 class="slider__caption">diamond</h2>
+            <p class="slider__txt">Universitas ____________</p>
+          </div>
+          <div class="slider__contents">
+            <img class="slider__image" src="/dist/img/ujay.png" alt="">
+            <h2 class="slider__caption">diamond</h2>
+            <p class="slider__txt">Universitas ____________</p>
+          </div>
+          <div class="slider__contents">
+            <img class="slider__image" src="/dist/img/ujay.png" alt="">
+            <h2 class="slider__caption">diamond</h2>
+            <p class="slider__txt">Universitas ____________</p>
+          </div>
+        </div>
+      </div>
 
     </main>
 
@@ -351,7 +440,7 @@
   </div>
 
   <!-- Javascript -->
-  <script src="script.js"></script>
+  <script src="/dist/js/script.js"></script>
 </body>
 </html>
 
