@@ -499,7 +499,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 ]
         })
     })
-        .catch(error => {
-            console.error('Error fetching superstore data:', error);
-        });
+    .catch(error => {
+        console.error('Error fetching superstore data:', error);
     });
+});
+
