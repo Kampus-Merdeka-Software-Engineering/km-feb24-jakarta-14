@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -345,6 +349,10 @@ table th {
   padding: 3%;
 }
 
+.mr-1 {
+  margin-right: 2%;
+}
+
 .text-light {
   color: #fff;
   font-size: small;
@@ -352,6 +360,10 @@ table th {
 
 .ta-center {
   text-align: center;
+}
+
+.start {
+  justify-content: flex-start;
 }
 
 .ta-justify {
@@ -402,11 +414,9 @@ canvas {
 }
 
 footer {
-  margin-left: 15%;
-  padding-left: 2%;
-  padding-right: 2%;
-  margin-top: 2%;
-  width: 81%;
+  padding-left: 15%;
+  width: 85%;
+  min-height: 30px;
   background-color: #ffffff;
   color: #0000008e;
   text-align: center;
@@ -741,4 +751,20 @@ footer {
     outline-color: #333;
     box-shadow: 0 0 0 0 #333, 0 0 0 0 rgba(51, 51, 51, 0);
   }
+}
+
+.slider-arrow {
+  background: none;
+  color: #1e242f;
+  border: none;
+  font-size: 50px;
+  cursor: pointer;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
 }
